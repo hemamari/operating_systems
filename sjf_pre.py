@@ -47,5 +47,7 @@ while process_list != []:
         else:
             process_list.append(process)
 
+print("The order of execution of the processes : ")
 print(gantt)
+print("The completion time, turnaround time and waiting time of each process : ")
 print(completion)

@@ -30,5 +30,7 @@ while process_list != []:
         wt = tt - burst_time
         process_list.remove(process)
         completed[pid] = [ct,tt,wt]
+print("The order of execution of the processes : ")
 print(gantt)
+print("The completion time, turnaround time and waiting time of each process : ")
 print(completed)
