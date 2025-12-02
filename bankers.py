@@ -1,6 +1,4 @@
-#Banker's Algorithm (using dictionaries)
 
-#step 1: Need matrix
 def calc_need(allocated,max_):
     need = {}
     for pid in allocated:
@@ -25,9 +23,7 @@ def bankers(allocated,max_,available):
 
     while not_processed < total_processes and len(safe_sequence) != total_processes :
         pid = processes.pop(0)
-        #Check if the process can be serviced
         if available >= need[pid]:
-            #The process can be serviced
             safe_sequence.append(pid)
             not_processed = 0
             for i in range(len(available)):
@@ -37,15 +33,13 @@ def bankers(allocated,max_,available):
             processes.append(pid)
 
     if len(safe_sequence) != total_processes:
-        print("No safe sequence possible")
+        print("For this case - safe sequence possible")
     else:
-        print("Safe sequence possible")
+        print("For this case - Safe sequence possible")
         print(safe_sequence)
-        print("Avaiable: ",available)
-        
-#get the input
+        print("Avaiable resources: ",available)
 
 available = [3,3,2]
 allocated = {"p0": [0,1,0],"p1":[2,0,0],"p2":[3,0,2],"p3":[2,1,1],"p4":[0,0,2]}
-max_ = {"p0":[7,5,3],"p1":[3,2,2],"p2":[9,0,2],"p3":[2,2,2],"p4":[4,3,3]}
-bankers(allocated,max_,available)
+maxi = {"p0":[7,5,3],"p1":[3,2,2],"p2":[9,0,2],"p3":[2,2,2],"p4":[4,3,3]}
+bankers(allocated,maxi,available)
