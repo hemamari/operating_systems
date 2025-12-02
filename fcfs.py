@@ -1,5 +1,6 @@
 #FCFS
-#Process : [arrival_time, burst_time, pid]
+
+# First Come First Serve
 
 process_list = [[2,6,"p1"],[5,2,"p2"],[1,8,"p3"],[0,3,"p4"],[4,4,"p5"]]
 
@@ -21,5 +22,7 @@ while process_list != []:
         tt = ct - process[0]
         wt = tt - process[1]
         completed[pid] = [ct,tt,wt]
+print("The order of execution of the processes : ")
 print(gantt)
+print("The completion time, turnaround time and waiting time of each process : ")
 print(completed)
